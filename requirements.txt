@@ -2,3 +2,6 @@ pyatlan==8.5.1
 streamlit==1.55.0
 plotly==6.6.0
 pandas==2.3.3
+pydantic==2.12.5
+httpx==0.28.1
+authlib==1.6.7
