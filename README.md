@@ -44,14 +44,22 @@ Then click **▶ Run Usage Report** or **▶ Run Maturity Report**.
 
 ---
 
-## Deploying to Streamlit Community Cloud (free)
+## Deploying to Railway (recommended, free tier available)
 
-1. Fork this repo to your GitHub account
-2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub
-3. Click **New app** → select your fork → set **Main file path** to `app.py`
-4. Click **Deploy** — your app will be live at `https://<your-app>.streamlit.app`
+> **Note:** Streamlit Community Cloud currently runs Python 3.14 which is incompatible with `pyatlan`'s internal use of `pydantic.v1`. Use Railway instead — it respects the `.python-version` file and runs Python 3.11.
 
-No secrets or environment variables are needed — credentials are entered at runtime in the sidebar.
+1. Go to [railway.app](https://railway.app) and sign in with GitHub
+2. Click **New Project** → **Deploy from GitHub repo**
+3. Select `MandeepCheema/atlan-usage-dashboard`
+4. Railway auto-detects the `Procfile` and `nixpacks.toml` — no config needed
+5. Click **Deploy** → get a public URL like `https://atlan-usage-dashboard.up.railway.app`
+
+No secrets needed — Atlan credentials are entered at runtime in the sidebar.
+
+## Deploying to Streamlit Community Cloud
+
+> ⚠️ Currently broken due to Python 3.14 / pydantic.v1 incompatibility on Streamlit Cloud.
+> Use Railway above until Streamlit Cloud supports Python version pinning again.
 
 ---
 
